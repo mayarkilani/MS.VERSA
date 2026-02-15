@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>أكاديمية الأستاذ أحمد الحلبي | Web App</title>
+    <title>أكاديمية الأستاذ أحمد الحلبي | Web App Pro</title>
     
     <link rel="icon" type="image/jpg" href="logo.jpg">
     <link rel="apple-touch-icon" href="logo.jpg">
@@ -13,75 +13,100 @@
             --gold-grad: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             --gold-solid: #d4af37;
             --black-pure: #050505;
-            --black-card: #121212;
+            --black-card: rgba(18, 18, 18, 0.9);
             --white: #ffffff;
             --success: #27ae60;
             --error: #e74c3c;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
-        body { background: var(--black-pure); color: var(--white); overflow-x: hidden; scroll-behavior: smooth; }
+        
+        body { 
+            background: var(--black-pure); 
+            color: var(--white); 
+            overflow-x: hidden; 
+            scroll-behavior: smooth;
+        }
 
-        /* بار الإشعارات المخصص */
+        /* الإشعارات الذكية */
         #notification-bar {
             position: fixed; top: -100px; left: 50%; transform: translateX(-50%);
             width: 90%; max-width: 400px; padding: 15px; border-radius: 12px;
-            text-align: center; font-weight: bold; z-index: 9999; transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8); color: white;
+            text-align: center; font-weight: bold; z-index: 9999; 
+            transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
 
+        /* هيدر شفاف وفخم */
         header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 25px; background: rgba(0,0,0,0.95);
-            border-bottom: 2px solid var(--gold-solid); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px);
+            padding: 15px 25px; background: rgba(0,0,0,0.8);
+            border-bottom: 2px solid var(--gold-solid); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(15px);
         }
         .logo-box { display: flex; align-items: center; gap: 12px; }
-        .logo-img { width: 45px; height: 45px; border-radius: 50%; border: 1.5px solid var(--gold-solid); object-fit: cover; }
-        .logo-text { font-weight: bold; background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.1rem; }
+        .logo-img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--gold-solid); object-fit: cover; box-shadow: 0 0 15px var(--gold-solid); }
+        .logo-text { font-weight: bold; background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.3rem; }
 
+        /* قسم الترحيب المذهل (الخلفية عادت!) */
         .hero {
-            height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; background: linear-gradient(rgba(0,0,0,0.7), var(--black-pure)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1000');
-            background-size: cover; background-position: center; padding: 20px;
+            height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; 
+            background: linear-gradient(rgba(0,0,0,0.5), var(--black-pure)), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1000');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            padding: 20px;
         }
-        .hero h1 { font-size: 2.2rem; }
+        .hero h1 { font-size: 3rem; text-shadow: 0 5px 15px rgba(0,0,0,1); margin-bottom: 10px; }
         .hero h1 span { background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: #ddd; max-width: 600px; }
 
-        .container { padding: 30px 20px; max-width: 550px; margin: 0 auto; }
-        .card { background: var(--black-card); padding: 25px; border-radius: 20px; border: 1px solid #222; }
+        .container { padding: 50px 20px; max-width: 600px; margin: 0 auto; }
+        
+        /* كرت التسجيل الفخم */
+        .card { 
+            background: var(--black-card); padding: 35px; border-radius: 30px; 
+            border: 1px solid rgba(212, 175, 55, 0.3); 
+            box-shadow: 0 20px 50px rgba(0,0,0,1);
+            backdrop-filter: blur(5px);
+        }
 
-        label { display: block; margin-bottom: 8px; color: var(--gold-solid); font-size: 0.9rem; font-weight: bold; }
+        label { display: block; margin-bottom: 10px; color: var(--gold-solid); font-weight: bold; }
         input, select { 
-            width: 100%; padding: 14px; background: #1a1a1a; border: 1px solid #333; 
-            color: white; border-radius: 12px; font-size: 16px; outline: none; margin-bottom: 18px;
+            width: 100%; padding: 16px; background: rgba(255,255,255,0.05); border: 1px solid #333; 
+            color: white; border-radius: 15px; font-size: 16px; outline: none; margin-bottom: 25px; transition: 0.3s;
         }
+        input:focus { border-color: var(--gold-solid); background: rgba(255,255,255,0.1); }
 
-        .price-tag { 
-            background: rgba(39, 174, 96, 0.1); padding: 15px; border-radius: 12px; 
-            text-align: center; margin: 10px 0 20px 0; border: 1px solid var(--success); display: none;
-        }
-
+        /* صندوق شام كاش الجذاب */
         .sham-box { 
-            background: rgba(212, 175, 55, 0.05); border: 2px dashed var(--gold-solid); 
-            padding: 20px; border-radius: 15px; text-align: center;
+            background: rgba(212, 175, 55, 0.1); border: 2px dashed var(--gold-solid); 
+            padding: 25px; border-radius: 20px; text-align: center; margin: 20px 0;
         }
-        .sham-num { font-size: 1.6rem; font-weight: bold; color: var(--gold-solid); display: block; margin: 5px 0; }
-        .btn-upload { background: var(--success); color: white; padding: 12px 20px; border-radius: 10px; display: inline-block; cursor: pointer; margin-top: 10px; font-weight: bold; }
+        .sham-num { font-size: 2rem; font-weight: bold; color: var(--gold-solid); display: block; margin: 10px 0; letter-spacing: 2px; }
+        .btn-upload { background: var(--success); color: white; padding: 12px 25px; border-radius: 12px; display: inline-block; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .btn-upload:hover { transform: scale(1.05); background: #2ecc71; }
 
         .btn-submit { 
-            width: 100%; padding: 18px; background: var(--gold-grad); border: none; 
-            border-radius: 15px; color: #000; font-weight: bold; font-size: 1.1rem; cursor: pointer; margin-top: 25px;
+            width: 100%; padding: 20px; background: var(--gold-grad); border: none; 
+            border-radius: 18px; color: #000; font-weight: bold; font-size: 1.3rem; cursor: pointer;
+            box-shadow: 0 10px 20px rgba(191, 149, 63, 0.4); transition: 0.3s;
         }
+        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(191, 149, 63, 0.6); }
 
-        /* أيقونة الواتساب العائمة (الذكية) */
+        /* واتساب العائم الذكي */
         .wa-float { 
-            position: fixed; bottom: 30px; left: 20px; background: #25d366; 
-            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            z-index: 2000; box-shadow: 0 10px 25px rgba(0,0,0,0.5); transition: 0.3s;
+            position: fixed; bottom: 30px; left: 25px; background: #25d366; 
+            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            z-index: 2000; box-shadow: 0 15px 35px rgba(0,0,0,0.6); transition: 0.4s;
         }
-        .wa-float:active { transform: scale(0.9); }
+        .wa-float:hover { transform: rotate(360deg) scale(1.1); }
 
-        footer { text-align: center; padding: 30px; color: #444; font-size: 0.75rem; border-top: 1px solid #111; margin-top: 20px; }
+        footer { text-align: center; padding: 50px; color: #666; font-size: 0.9rem; background: #000; }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero { height: 60vh; }
+        }
     </style>
 </head>
 <body>
@@ -93,56 +118,43 @@
             <img src="logo.jpg" alt="Logo" class="logo-img">
             <div class="logo-text">أحمد الحلبي</div>
         </div>
-        <div style="color: var(--gold-solid); font-weight: bold; font-size: 0.8rem;">PRO APP</div>
+        <div style="color: var(--gold-solid); font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">PREMIUM</div>
     </header>
 
     <section class="hero">
-        <h1>أكاديمية <span>الاحتراف</span> للفنون</h1>
-        <p style="color: #aaa; margin-top: 10px;">دقة، إبداع، ومستقبل مهني مضمون</p>
+        <h1>أكاديمية <span>الاحتراف</span></h1>
+        <p>فن الحلاقة والإبداع يبدأ من هنا.. بإشراف الأستاذ أحمد الحلبي</p>
     </section>
 
     <div class="container">
         <div class="card">
-            <h2 style="text-align: center; color: var(--gold-solid); margin-bottom: 25px;">استمارة التسجيل</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; font-size: 1.6rem; color: #fff;">احجز مقعدك الآن</h2>
             <form id="proForm">
-                <label>الاسم الثلاثي</label>
-                <input type="text" id="name" placeholder="يرجى كتابة الاسم الكامل" required>
+                <label>الاسم بالكامل</label>
+                <input type="text" id="name" placeholder="مثال: محمد الحلبي" required>
 
                 <label>رقم الواتساب</label>
                 <input type="tel" id="studentPhone" placeholder="09xxxxxxxx" required>
 
-                <label>نوع الدورة التدريبية</label>
-                <select id="courseSelect" onchange="updatePrice()" required>
-                    <option value="" data-price="0">-- اختر من القائمة --</option>
-                    <option value="دورة المبتدئين" data-price="500000">دورة المبتدئين (500,000 ل.س)</option>
-                    <option value="دورة المحترفين" data-price="750000">دورة المحترفين (750,000 ل.س)</option>
-                    <option value="دورة العناية" data-price="300000">دورة العناية (300,000 ل.س)</option>
-                </select>
-
-                <div class="price-tag" id="priceBox">
-                    التكلفة المطلوبة: <span id="coursePrice">0</span> ل.س
-                </div>
-
                 <div class="sham-box">
-                    <p>حول رسوم الحجز إلى رقم شام كاش:</p>
+                    <p style="color: #ccc;">حول الرسوم لتثبيت الحجز عبر شام كاش:</p>
                     <span class="sham-num">0995856529</span>
                     <input type="file" id="receipt" style="display:none;" accept="image/*">
-                    <label for="receipt" class="btn-upload" id="uploadLabel">📸 إرفاق صورة التحويل</label>
+                    <label for="receipt" class="btn-upload" id="uploadLabel">📸 إرفاق صورة الإيصال</label>
                 </div>
 
-                <button type="submit" class="btn-submit">تأكيد وحجز مقعدك</button>
+                <button type="submit" class="btn-submit">تأكيد الحجز والإرسال</button>
             </form>
         </div>
     </div>
 
     <a href="https://wa.me/963995856529" class="wa-float" target="_blank">
-        <svg width="35" height="35" fill="white" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-        </svg>
+        <svg width="35" height="35" fill="white" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
     </a>
 
     <footer>
-        <p>تصميم Web App ذكي &copy; 2026 | الأستاذ أحمد الحلبي</p>
+        <p>تصميم Web App فخم &copy; 2026</p>
+        <p>أكاديمية الأستاذ أحمد الحلبي</p>
     </footer>
 
     <script>
@@ -150,39 +162,29 @@
             const bar = document.getElementById('notification-bar');
             bar.innerText = message;
             bar.style.backgroundColor = type === 'error' ? 'var(--error)' : 'var(--success)';
-            bar.style.top = '20px';
+            bar.style.top = '25px';
             setTimeout(() => { bar.style.top = '-100px'; }, 3500);
-        }
-
-        function updatePrice() {
-            const select = document.getElementById('courseSelect');
-            const price = select.options[select.selectedIndex].getAttribute('data-price');
-            const priceBox = document.getElementById('priceBox');
-            const priceDisplay = document.getElementById('coursePrice');
-            if(price > 0) {
-                priceBox.style.display = 'block';
-                priceDisplay.innerText = Number(price).toLocaleString();
-            } else { priceBox.style.display = 'none'; }
         }
 
         document.getElementById('receipt').addEventListener('change', function() {
             if(this.files.length > 0) {
-                document.getElementById('uploadLabel').innerHTML = "✅ تم إرفاق الصورة";
+                document.getElementById('uploadLabel').innerHTML = "✅ تم تحميل الإيصال";
                 document.getElementById('uploadLabel').style.background = "#bf953f";
-                showNotify("تم إرفاق الإيصال بنجاح!", "success");
+                showNotify("رائع! تم إرفاق الإيصال بنجاح.", "success");
             }
         });
 
         document.getElementById('proForm').addEventListener('submit', function(e) {
             e.preventDefault();
             if(document.getElementById('receipt').files.length === 0) {
-                showNotify("⚠️ يرجى إرفاق صورة الإيصال أولاً!", "error");
+                showNotify("⚠️ عفواً! يجب إرفاق صورة الإيصال أولاً.", "error");
                 return;
             }
             const name = document.getElementById('name').value;
-            const msg = `مرحباً أستاذ أحمد، أود التسجيل باسم: ${name}. قمت بإرفاق الإيصال عبر الموقع.`;
-            showNotify("جاري فتح الواتساب...", "success");
-            setTimeout(() => { window.open(`https://wa.me/963995856529?text=${msg}`, '_blank'); }, 1200);
+            showNotify("ممتاز يا بطل! جاري تحويلك للأستاذ أحمد...", "success");
+            setTimeout(() => {
+                window.open(`https://wa.me/963995856529?text=طلب تسجيل جديد من: ${name}`, '_blank');
+            }, 1200);
         });
     </script>
 </body>
